@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Video player slider styles - Enhanced for better visibility and perfect alignment */
+input[type="range"] {
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Progress bar styles - Perfectly centered */
+input[type="range"].progress-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 8px;
+}
+
+input[type="range"].progress-slider::-webkit-slider-track {
+  background: #4b5563;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+input[type="range"].progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #dc2626;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.15s ease-in-out;
+  margin-top: -4px; /* Perfect vertical centering */
+}
+
+input[type="range"].progress-slider::-webkit-slider-thumb:hover {
+  background: #b91c1c;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
+}
+
+/* Volume slider styles - Perfectly centered */
+input[type="range"].volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 4px;
+}
+
+input[type="range"].volume-slider::-webkit-slider-track {
+  background: #4b5563;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+}
+
+input[type="range"].volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.15s ease-in-out;
+  margin-top: -4px; /* Perfect vertical centering */
+}
+
+input[type="range"].volume-slider::-webkit-slider-thumb:hover {
+  background: #f3f4f6;
+  transform: scale(1.1);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox styles - Perfectly centered */
+input[type="range"].progress-slider::-moz-range-track {
+  background: #4b5563;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+input[type="range"].progress-slider::-moz-range-thumb {
+  background: #dc2626;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  margin-top: 0; /* Firefox centering */
+}
+
+input[type="range"].volume-slider::-moz-range-track {
+  background: #4b5563;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+}
+
+input[type="range"].volume-slider::-moz-range-thumb {
+  background: #ffffff;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  margin-top: 0; /* Firefox centering */
+}
+
+/* Focus styles */
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"].progress-slider:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+input[type="range"].volume-slider:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Dynamic progress fill effect */
+input[type="range"].progress-slider {
+  background: linear-gradient(to right, #dc2626 0%, #dc2626 var(--progress, 0%), #4b5563 var(--progress, 0%), #4b5563 100%);
+}
+
+input[type="range"].volume-slider {
+  background: linear-gradient(to right, #ffffff 0%, #ffffff var(--volume, 0%), #4b5563 var(--volume, 0%), #4b5563 100%);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Ensure sliders are visible on all backgrounds */
+.progress-slider,
+.volume-slider {
+  position: relative;
+  z-index: 10;
+}
+
+/* Hide scrollbars in video player */
+.video-player-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.video-player-container::-webkit-scrollbar {
+  display: none;
+}
